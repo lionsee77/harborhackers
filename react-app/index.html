@@ -1,13 +1,64 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/src/assets/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HarborHackers</title>
+
+  <!-- Link to custom stylesheet for loading animation and brand styles -->
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0a3759;
+      /* Background color matching the brand theme */
+      font-family: 'Arial', sans-serif;
+    }
+
+    #root {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+    }
+
+    /* Loading Screen Styles */
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loading-container img {
+      width: 100px;
+      /* Adjust the logo size */
+      height: auto;
+      margin-bottom: 16px;
+    }
+
+    .loading-container h1 {
+      color: white;
+      font-size: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <!-- Custom loading content for initial branding -->
+    <div class="loading-container">
+      <img src="/src/assets/logo.png" alt="HarborHackers Logo" />
+      <h1>Loading HarborHackers Platform...</h1>
+    </div>
+  </div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
