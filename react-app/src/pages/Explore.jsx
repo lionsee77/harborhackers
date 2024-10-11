@@ -2,13 +2,13 @@
 import React from 'react';
 import { Box, Heading, Text } from '@chakra-ui/react';
 
-function Page3() {
+function Explore() {
     return (
         <Box p={8}>
-            <Heading>Page 3</Heading>
-            <Text mt={4}>This is the content for Page 3.</Text>
+            <Heading>Explore</Heading>
+            <Text mt={4}>This is the content for Explore.</Text>
         </Box>
     );
 }
 
-export default Page3;
+export default Explore;
