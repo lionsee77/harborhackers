@@ -2,13 +2,13 @@
 import React from 'react';
 import { Box, Heading, Text } from '@chakra-ui/react';
 
-function Favourites() {
+function DockWorks() {
     return (
         <Box p={8}>
-            <Heading>Favourites</Heading>
-            <Text mt={4}>This is the content for Favourites.</Text>
+            <Heading>DockWorks</Heading>
+            <Text mt={4}>This is the content for DockWorks.</Text>
         </Box>
     );
 }
 
-export default Favourites;
+export default DockWorks;
