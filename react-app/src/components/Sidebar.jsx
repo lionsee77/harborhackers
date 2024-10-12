@@ -21,29 +21,34 @@ import {
     FiSettings,
     FiMenu,
     FiCheckSquare,
+    FiLogIn,
+    FiUser,
 
 } from 'react-icons/fi';
+import {
+    IoChatboxEllipses
+} from "react-icons/io5";
+import { MdOutlineChecklist } from "react-icons/md";
 import { Link, Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home';
-import Trending from '../pages/Trending';
-import Explore from '../pages/Explore';
-import Favourites from '../pages/Favourites';
+import Trending from '../pages/PortPal';
+import Explore from '../pages/Compass';
+import Favourites from '../pages/DockWorks';
 import Settings from '../pages/Settings';
 import Login from '../pages/Login';
+import { useAuth } from '../context/AuthContext'; // Import your AuthContext
+import { useNavigate } from 'react-router-dom'; // To handle navigation
 import Tasks from '../pages/Tasks'; 
-
 
 // Sidebar link items
 const LinkItems = [
     { name: 'Home', icon: FiHome, path: '/' },
-    { name: 'Trending', icon: FiTrendingUp, path: '/trending' },
-    { name: 'Explore', icon: FiCompass, path: '/explore' },
-    { name: 'Favourites', icon: FiStar, path: '/favourites' },
+    { name: 'PortPal', icon: IoChatboxEllipses, path: '/portpal' },
+    { name: 'Compass', icon: FiCompass, path: '/compass' },
+    { name: 'DockWorks', icon: MdOutlineChecklist, path: '/dockworks' },
     { name: 'Settings', icon: FiSettings, path: '/settings' },
     { name: 'Login/Signup', icon: FiSettings, path: '/login' },
     { name: 'Tasks', icon: FiCheckSquare, path: '/tasks' },
-
-
 ];
 
 const Sidebar = ({ children }) => {
@@ -77,6 +82,18 @@ const Sidebar = ({ children }) => {
 }
 
 const SidebarContent = ({ onClose, ...rest }) => {
+    const { user } = useAuth(); // Get the user from AuthContext
+    const navigate = useNavigate();
+    const handleLoginNavigation = () => {
+        console.log('handleloginnav called')
+        if (user) {
+            console.log('navigating to user')
+            navigate('/user'); // Navigate to the user page if the user is logged in
+        } else {
+            console.log('navigating to login')
+            navigate('/login'); // Navigate to the login page if no user is logged in
+        }
+    }
     return (
         <Box
             bg={useColorModeValue('white', 'gray.900')}
@@ -89,7 +106,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         >
             <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
                 <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-                    Logo
+                    CrewMate
                 </Text>
                 <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
             </Flex>
@@ -98,6 +115,15 @@ const SidebarContent = ({ onClose, ...rest }) => {
                     {link.name}
                 </NavItem>
             ))}
+            {user ? (
+                <NavItem icon={FiUser} path={'/user'}>
+                    Profile
+                </NavItem>
+            ) : (
+                <NavItem icon={FiLogIn} path={'/login'}>
+                    Login
+                </NavItem>
+            )}
         </Box>
     );
 };
@@ -150,7 +176,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
             <IconButton variant="outline" onClick={onOpen} aria-label="open menu" icon={<FiMenu />} />
 
             <Text fontSize="2xl" ml="8" fontFamily="monospace" fontWeight="bold">
-                Logo
+                CrewMate
             </Text>
         </Flex>
     );

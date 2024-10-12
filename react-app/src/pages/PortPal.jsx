@@ -2,13 +2,13 @@
 import React from 'react';
 import { Box, Heading, Text } from '@chakra-ui/react';
 
-function Trending() {
+function PortPal() {
   return (
     <Box p={8}>
-      <Heading>Trending</Heading>
-      <Text mt={4}>This is the content for Trending.</Text>
+      <Heading>PortPal</Heading>
+      <Text mt={4}>This is the content for PortPal.</Text>
     </Box>
   );
 }
 
-export default Trending;
+export default PortPal;
