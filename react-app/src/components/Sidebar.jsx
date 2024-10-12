@@ -20,12 +20,16 @@ import {
     FiStar,
     FiSettings,
     FiMenu,
+
 } from 'react-icons/fi';
 import { Link, Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home';
 import Trending from '../pages/Trending';
 import Explore from '../pages/Explore';
+import Favourites from '../pages/Favourites';
 import Settings from '../pages/Settings';
+import Login from '../pages/Login';
+
 
 // Sidebar link items
 const LinkItems = [
@@ -34,9 +38,11 @@ const LinkItems = [
     { name: 'Explore', icon: FiCompass, path: '/explore' },
     { name: 'Favourites', icon: FiStar, path: '/favourites' },
     { name: 'Settings', icon: FiSettings, path: '/settings' },
+    { name: 'Login/Signup', icon: FiSettings, path: '/login' },
+
 ];
 
-export default function SimpleSidebar() {
+const Sidebar = ({ children }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
@@ -53,21 +59,14 @@ export default function SimpleSidebar() {
             >
                 <DrawerContent>
                     <SidebarContent onClose={onClose} />
+
                 </DrawerContent>
             </Drawer>
 
             <MobileNav display={{ base: 'flex', md: 'none' }} onOpen={onOpen} />
 
-            <Box ml={{ base: 0, md: 60 }} p="4">
-                {/* Define the routing structure */}
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/trending" element={<Trending />} />
-                    <Route path="/explore" element={<Explore />} />
-                    <Route path="/settings" element={<Settings />} />
-                    <Route path="/favourites" element={<Settings />} />
-
-                </Routes>
+            <Box ml={{ base: 0, md: 60 }} p="0">
+                {children}
             </Box>
         </Box>
     );
@@ -152,3 +151,4 @@ const MobileNav = ({ onOpen, ...rest }) => {
         </Flex>
     );
 };
+export default Sidebar;

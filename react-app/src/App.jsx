@@ -1,37 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Box, Flex, Text } from '@chakra-ui/react';
-import Sidebar from './components/Sidebar';
-import Page1 from './pages/Home';
-import Page2 from './pages/Trending';
-import Page3 from './pages/Settings';
+import Sidebar from './components/Sidebar'; // Import the Sidebar Component
+import Home from './pages/Home';
+import Trending from './pages/Trending';
 import Login from './pages/Login';
+import Explore from './pages/Explore';
+import Favourites from './pages/Favourites';
+import Settings from './pages/Settings';
 
 function App() {
   return (
     <Router>
-      <Flex minH="100vh">
-        {/* Sidebar Section */}
-        <Box position="fixed" top="0" left="0" h="full" w="full">
-          <Sidebar />
-        </Box>
+      <Sidebar>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/trending" element={<Trending />} />
+          <Route path="/explore" element={<Explore />} />
+          <Route path="/favourites" element={<Favourites />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/login" element={<Login />} />
 
-        {/* Main Content Area */}
-        <Box
-          ml="60" // Match Sidebar width
-          mt="20" // Account for header height
-          p="8"
-          flex="1"
-          bg="gray.50"
-        >
-          <Routes>
-            <Route path="/page1" element={<Page1 />} />
-            <Route path="/page2" element={<Page2 />} />
-            <Route path="/page3" element={<Page3 />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-        </Box>
-      </Flex>
+        </Routes>
+      </Sidebar>
     </Router>
   );
 }
