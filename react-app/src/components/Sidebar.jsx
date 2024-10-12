@@ -20,6 +20,7 @@ import {
     FiStar,
     FiSettings,
     FiMenu,
+    FiCheckSquare,
 
 } from 'react-icons/fi';
 import { Link, Route, Routes } from 'react-router-dom';
@@ -29,6 +30,7 @@ import Explore from '../pages/Explore';
 import Favourites from '../pages/Favourites';
 import Settings from '../pages/Settings';
 import Login from '../pages/Login';
+import Tasks from '../pages/Tasks'; 
 
 
 // Sidebar link items
@@ -39,6 +41,8 @@ const LinkItems = [
     { name: 'Favourites', icon: FiStar, path: '/favourites' },
     { name: 'Settings', icon: FiSettings, path: '/settings' },
     { name: 'Login/Signup', icon: FiSettings, path: '/login' },
+    { name: 'Tasks', icon: FiCheckSquare, path: '/tasks' },
+
 
 ];
 

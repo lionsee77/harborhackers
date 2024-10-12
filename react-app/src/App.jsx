@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Explore from './pages/Explore';
 import Favourites from './pages/Favourites';
 import Settings from './pages/Settings';
+import Tasks from './pages/Tasks';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/favourites" element={<Favourites />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/tasks" element={<Tasks />} />
 
         </Routes>
       </Sidebar>
