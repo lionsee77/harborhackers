@@ -1,10 +1,13 @@
 # HarborHackers
 
 ## Table of Contents
-- [Overview](#overview)
+- [Overview](#overview-⚓️)
 - [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
+  - [PortPal](#portpal-🤖)
+  - [Compass](#compass-🧭)
+  - [DockWorks](#dockworks-🧩)
+- [Tech Stack](#tech-stack-💻)
+- [Members](#members-👥)
 
 ## Overview ⚓️
 <img width="1706" alt="Screenshot 2024-10-13 at 10 19 58 PM" src="https://github.com/user-attachments/assets/b1038943-ff59-4300-bf73-ecc10cff6d56">
@@ -19,10 +22,11 @@ A conversational assistant that answers all Port of Singapore Authority queries.
 PortPal ensures that employees can quickly and effortlessly access company protocols. Whether they have a question about specific procedures, policies, or best practices, the chatbot offers instant, accurate answers, eliminating the need for manual searches or waiting for HR responses. This boosts productivity by saving time and ensures employees are always informed about the latest guidelines.
 
 ### **Compass** 🧭
+![photo_2024-10-13_23-18-10](https://github.com/user-attachments/assets/9247271b-48f0-404d-a81a-20f2adac3ee7)
 AI-driven suggestions for role-relevant training and development. Compass curates tailored learning paths for employees based on their roles and interests. By analyzing job requirements and individual skills, it provides targeted upskilling opportunities, empowering employees to develop their competencies. This personalized approach helps foster continuous professional growth and prepares employees for career advancement.
 
 ### **DockWorks** 🧩
-![image](https://github.com/user-attachments/assets/4d0463f3-1c11-4cf9-b3c7-bddfdf4f6f59) |<img width="1659" alt="Screenshot 2024-10-13 at 11 08 21 PM" src="https://github.com/user-attachments/assets/d739053f-5f82-4e2d-bbfb-b3753fd96e56">
+<img width="1269" alt="Screenshot 2024-10-13 at 11 11 46 PM" src="https://github.com/user-attachments/assets/61dbc455-da45-4056-9027-cb7fce1675f6">
 
 A gamified system that promotes community engagement and well-being by rewarding employees for completing welfare-related tasks and professional development activities. Employees can earn points for tasks such as attending workshops, engaging in wellness programs, or interacting with colleagues. These points can be exchanged for rewards, incentivizing active participation and fostering a sense of community within PSA. This feature not only enhances the overall employee experience but also encourages a culture of collaboration and continuous improvement.
 
