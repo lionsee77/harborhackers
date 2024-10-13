@@ -22,7 +22,7 @@ A conversational assistant that answers all Port of Singapore Authority queries.
 PortPal ensures that employees can quickly and effortlessly access company protocols. Whether they have a question about specific procedures, policies, or best practices, the chatbot offers instant, accurate answers, eliminating the need for manual searches or waiting for HR responses. This boosts productivity by saving time and ensures employees are always informed about the latest guidelines.
 
 ### **Compass** 🧭
-![photo_2024-10-13_23-18-10](https://github.com/user-attachments/assets/9247271b-48f0-404d-a81a-20f2adac3ee7)
+<img width="1040" alt="Screenshot 2024-10-13 at 11 20 11 PM" src="https://github.com/user-attachments/assets/970e28ec-3ca3-464d-b5e9-f00087920c8b">
 AI-driven suggestions for role-relevant training and development. Compass curates tailored learning paths for employees based on their roles and interests. By analyzing job requirements and individual skills, it provides targeted upskilling opportunities, empowering employees to develop their competencies. This personalized approach helps foster continuous professional growth and prepares employees for career advancement.
 
 ### **DockWorks** 🧩
