@@ -26,14 +26,19 @@ A gamified system that promotes community engagement and well-being by rewarding
 
 
 ## Tech Stack 💻
+![Screenshot 2024-10-13 at 10 59 18 PM](https://github.com/user-attachments/assets/c341d964-31d8-44f0-aa4a-8fce9d020c1d)
 - React.js
 - OpenAI API
 - Fast API
+- Render
+- Beautiful Soup
 - Supabase
-- Vercel App 
+- Vercel
 
 ## Members 👥 
-- @davidchanwz
-- @lionsee77
+- [David Chan](https://github.com/davidchanwz)
+- [Lionel See](https://github.com/lionsee77)
+- [Zay Nin](https://github.com/zay-nin)
+- [Stanley Hsu](https://github.com/walkaround54)
 
 
