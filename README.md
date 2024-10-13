@@ -7,6 +7,7 @@
 - [Usage](#usage)
 
 ## Overview 
+<img width="1706" alt="Screenshot 2024-10-13 at 10 19 58 PM" src="https://github.com/user-attachments/assets/b1038943-ff59-4300-bf73-ecc10cff6d56">
 CrewMate is an application that leverages on the power of AI to integrate learning, engagement, and communication into one comprehensive platform,
 Through our deployed features, CrewMate is positioned as a valuable tool to facilitate PSA in its mission of creating a dynamic, empowered, and well-connected workforce.
 ## Features
@@ -24,8 +25,10 @@ A gamified system that promotes community engagement and well-being by rewarding
 
 ## Tech Stack:
 - React.js
-- Node.js
 - OpenAI API
+- Fast API
 - Supabase
+- Vercel App 
+  
 
 
