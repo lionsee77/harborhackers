@@ -1,16 +1,17 @@
 # HarborHackers
 
 ## Table of Contents
-- [Overview](#overview-⚓️)
+- [Overview](#overview)
 - [Features](#features)
-  - [PortPal](#portpal-🤖)
-  - [Compass](#compass-🧭)
-  - [DockWorks](#dockworks-🧩)
-- [Tech Stack](#tech-stack-💻)
-- [Members](#members-👥)
+  - [PortPal](#portpal)
+  - [Compass](#compass)
+  - [DockWorks](#dockworks)
+- [Tech Stack](#tech-stack)
+- [Members](#members)
+
 
 ## Overview ⚓️
-<img width="1706" alt="Screenshot 2024-10-13 at 10 19 58 PM" src="https://github.com/user-attachments/assets/b1038943-ff59-4300-bf73-ecc10cff6d56">
+<img width="500" alt="Screenshot 2024-10-13 at 10 19 58 PM" src="https://github.com/user-attachments/assets/b1038943-ff59-4300-bf73-ecc10cff6d56">
 CrewMate is an application that leverages on the power of AI to integrate learning, engagement, and communication into one comprehensive platform,
 Through our deployed features, CrewMate is positioned as a valuable tool to facilitate PSA in its mission of creating a dynamic, empowered, and well-connected workforce.
 
