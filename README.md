@@ -11,14 +11,14 @@
 
 
 ## Overview ⚓️
-<img width="500" alt="Screenshot 2024-10-13 at 10 19 58 PM" src="https://github.com/user-attachments/assets/b1038943-ff59-4300-bf73-ecc10cff6d56">
-CrewMate is an application that leverages on the power of AI to integrate learning, engagement, and communication into one comprehensive platform,
-Through our deployed features, CrewMate is positioned as a valuable tool to facilitate PSA in its mission of creating a dynamic, empowered, and well-connected workforce.
+<img width="1700" alt="Screenshot 2024-10-13 at 10 19 58 PM" src="https://github.com/user-attachments/assets/b1038943-ff59-4300-bf73-ecc10cff6d56">
+
+CrewMate is an application that leverages on the power of AI to integrate learning, engagement, and communication into one comprehensive platform. Through our deployed features, CrewMate is positioned as a valuable tool to facilitate PSA in its mission of creating a dynamic, empowered, and well-connected workforce.
 
 ## Features
 
 ### **PortPal** 🤖
-<img width="1698" alt="Screenshot 2024-10-13 at 10 21 48 PM" src="https://github.com/user-attachments/assets/b493d689-d001-4343-90f7-76d4a1a3ddf6">
+<img width="500" alt="Screenshot 2024-10-13 at 10 21 48 PM" src="https://github.com/user-attachments/assets/b493d689-d001-4343-90f7-76d4a1a3ddf6">
 A conversational assistant that answers all Port of Singapore Authority queries.
 PortPal ensures that employees can quickly and effortlessly access company protocols. Whether they have a question about specific procedures, policies, or best practices, the chatbot offers instant, accurate answers, eliminating the need for manual searches or waiting for HR responses. This boosts productivity by saving time and ensures employees are always informed about the latest guidelines.
 
