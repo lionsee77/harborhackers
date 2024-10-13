@@ -3,6 +3,7 @@ import random
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Optional, Union
+from datetime import datetime, timedelta
 import supabase
 import json
 import os
@@ -34,16 +35,54 @@ class Employee(BaseModel):
 
 # Define the Task model
 class Task(BaseModel):
-    task_id: Optional[str]
+    task_id: Optional[str] = None
     user_id: str
     partner_id: Optional[str] = None
-    task_description: str
+    task_description: str  # Limit this in the input generation step (max 10 words)
     task_type: str  # single_fun, pair_fun, single_work, pair_work
-    difficulty: str
-    points: int
-    suggested_courses: Optional[List[str]] = []
+    difficulty: str  # easy, medium, hard
+    points: int  # Points calculated based on difficulty
+    due_by: str  # Due date (formatted as string for easier handling)
     completed: bool = False  # New field for task completion status
-    created_at: Optional[str] = None
+    completed_at: Optional[str] = None  # Will be null until task is completed
+    created_at: Optional[str] = None  # Default to current date
+
+    @staticmethod
+    def calculate_due_date(difficulty: str) -> str:
+        """Calculate due date based on difficulty level."""
+        days_map = {
+            "easy": 1,
+            "medium": 3,
+            "hard": 5
+        }
+        days_to_add = days_map.get(difficulty, 1)
+        due_date = datetime.now() + timedelta(days=days_to_add)
+        return due_date.strftime('%Y-%m-%d')
+    @staticmethod
+    def calculate_points(difficulty: str) -> int:
+        """Calculate points based on difficulty level."""
+        points_map = {
+            "easy": 3,
+            "medium": 5,
+            "hard": 10
+        }
+        return points_map.get(difficulty, 0)
+
+    @classmethod
+    def create_task(cls, user_id: str, partner_id: Optional[str], task_description: str, task_type: str, difficulty: str) -> 'Task':
+        """Create a task with default values for points and due date."""
+
+        
+        return cls(
+            user_id=user_id,
+            partner_id=partner_id,
+            task_description=task_description,
+            task_type=task_type,
+            difficulty=difficulty,
+            points=cls.calculate_points(difficulty),
+            due_by=cls.calculate_due_date(difficulty),
+            created_at=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        )
 
 
 # Function to fetch employees from Supabase
@@ -144,9 +183,6 @@ Task Format:
   "task_description": "<task_description (max 10 words)>",
   "task_type": "<task_type>",
   "difficulty": "<difficulty (easy/medium/hard)>",
-  "points": <points (Based on difficulty; Easy = 3, Medium = 5, Hard = 10)>,
-  "suggested_courses": <suggested_courses or []>,
-  "completed": false
 }}
 
 Please ensure the response is valid JSON and follows the exact format above. Output should not have any extra text.
@@ -167,6 +203,8 @@ Generate a task of type {task_type}. {prompt}
 
         # Log raw response for debugging
         raw_response = response.choices[0].message.content.strip()
+        if raw_response:
+            print(raw_response)
 
         return json.loads(raw_response)  # Parse as JSON
 
@@ -192,7 +230,7 @@ def generate_singular_fun_task(employee: Employee) -> Task:
     """
     task_desc = generate_task_with_openai(prompt, "single_fun")
     
-    return Task(**task_desc)
+    return Task.create_task(**task_desc)
 
 def generate_pair_fun_task(employee: Employee, partner: Employee) -> Task:
     prompt = f"""
@@ -204,7 +242,7 @@ def generate_pair_fun_task(employee: Employee, partner: Employee) -> Task:
     """
     task_desc = generate_task_with_openai(prompt, "pair_fun")
     
-    return Task(**task_desc)
+    return Task.create_task(**task_desc)
 
 def generate_singular_work_task(employee: Employee) -> Task:
     prompt = f"""
@@ -219,7 +257,7 @@ def generate_singular_work_task(employee: Employee) -> Task:
     """
     task_desc = generate_task_with_openai(prompt, "single_work")
     
-    return Task(**task_desc)
+    return Task.create_task(**task_desc)
 
 def generate_pair_work_task(employee: Employee, partner: Employee) -> Task:
     prompt = f"""
@@ -231,7 +269,7 @@ def generate_pair_work_task(employee: Employee, partner: Employee) -> Task:
     """
     task_desc = generate_task_with_openai(prompt, "pair_work")
     
-    return Task(**task_desc)
+    return Task.create_task(**task_desc)
 
 ### Main Task Generation for All Employees ###
 @app.post("/generate-tasks-for-all")
@@ -256,9 +294,9 @@ def generate_tasks_for_all():
             tasks.append(pair_fun_task)
         
         # Generate a single work task
-        single_work_task = generate_singular_work_task(employee)
-        save_task_to_supabase(single_work_task)  # Save to Supabase
-        tasks.append(single_work_task)
+        # single_work_task = generate_singular_work_task(employee)
+        # save_task_to_supabase(single_work_task)  # Save to Supabase
+        # tasks.append(single_work_task)
         
         # Generate a pair work task
         partner_for_work = get_work_partner(employee, employee_list)
@@ -281,8 +319,9 @@ def save_task_to_supabase(task: Task) -> None:
         "task_type": task.task_type,
         "difficulty": task.difficulty,
         "points": task.points,
-        "suggested_courses": task.suggested_courses,
+        "due_by": task.due_by,
         "completed": task.completed,
+        "completed_at": task.completed_at,
         "created_at": task.created_at
     }
     
