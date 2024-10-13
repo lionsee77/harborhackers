@@ -22,6 +22,8 @@ PortPal ensures that employees can quickly and effortlessly access company proto
 AI-driven suggestions for role-relevant training and development. Compass curates tailored learning paths for employees based on their roles and interests. By analyzing job requirements and individual skills, it provides targeted upskilling opportunities, empowering employees to develop their competencies. This personalized approach helps foster continuous professional growth and prepares employees for career advancement.
 
 ### **DockWorks** 🧩
+![image](https://github.com/user-attachments/assets/4d0463f3-1c11-4cf9-b3c7-bddfdf4f6f59) |<img width="1659" alt="Screenshot 2024-10-13 at 11 08 21 PM" src="https://github.com/user-attachments/assets/d739053f-5f82-4e2d-bbfb-b3753fd96e56">
+
 A gamified system that promotes community engagement and well-being by rewarding employees for completing welfare-related tasks and professional development activities. Employees can earn points for tasks such as attending workshops, engaging in wellness programs, or interacting with colleagues. These points can be exchanged for rewards, incentivizing active participation and fostering a sense of community within PSA. This feature not only enhances the overall employee experience but also encourages a culture of collaboration and continuous improvement.
 
 
